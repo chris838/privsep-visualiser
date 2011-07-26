@@ -37,7 +37,7 @@ var vis = d3.select("#chart").append("svg:svg")
     .attr("width", w)
     .attr("height", h);
 
-d3.json("../../../data/flare.json", function(json) {
+d3.json("../../data/flare.json", function(json) {
   root = json;
   update();
 });
@@ -107,6 +107,12 @@ function color(d) {
 
 // Toggle children on click.
 function click(d) {
+  console.log(d);
+}
+
+
+// Toggle children on click.
+function click2(d) {
   if (d.children) {
     d._children = d.children;
     d.children = null;

@@ -163,7 +163,7 @@ var vis = body.append("svg:svg")
    .attr("width", w)
    .attr("height", h);
 
-d3.json("miserables.json", function(json) {
+d3.json("../../data/callgraph.json", function(json) {
   data = json;
   for (var i=0; i<data.links.length; ++i) {
     o = data.links[i];
@@ -212,7 +212,7 @@ function init() {
       .attr("y1", function(d) { return d.source.y; })
       .attr("x2", function(d) { return d.target.x; })
       .attr("y2", function(d) { return d.target.y; })
-      .style("stroke-width", function(d) { return d.size || 1; });
+      .style("stroke-width", function(d) { return 10; });
   link = linkg.selectAll("line.link");
 
   node = nodeg.selectAll("circle.node").data(net.nodes, nodeid);
