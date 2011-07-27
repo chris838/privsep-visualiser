@@ -16,7 +16,11 @@
 		{"id":10, "active":0, "group":0, "m":1, "label":"apples" 		},
 		{"id":11, "active":0, "group":1, "m":1, "label":"orange" 		},
 		{"id":12, "active":0, "group":2, "m":1, "label":"melons" 		}
-	],
+	],granny_smith
+crab
+cox
+melons
+
 	"links":[
 		{"id":0,  "source":0,  "target":1,  "value":1},
 		{"id":1,  "source":0,  "target":2,  "value":1},

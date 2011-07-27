@@ -64,6 +64,7 @@ while 1:
 			g.add_edges( (v1[0].index,v2[0].index) )
 			if (v1[0]['group'] == v2[0]['group']) : g.es[i]['value'] = 1
 			else : g.es[i]['value'] = 1
+			g.es[i]['id'] = i
 			i = i+1
 			
 
@@ -76,9 +77,16 @@ for i in range(0,len(g.vs)) :
 	group = g.vs[i]['group']
 	while len(sizes) <= group : sizes.append(0)
 	sizes[group] += 1
+	
+# Calculate weights as the negated sum of end point valences
+weights = [1]*len(g.es)
+for i in range(0,len(g.es)) :
+	edge = g.es[i]
+	weights[i] = -(  g.degree(g.vs[edge.source]) 
+				   + g.degree(g.vs[edge.target]) )
 
-# Calculate the maximum spanning tree
-t = g.spanning_tree( ([-1]*len(g.es)) );
+# Calculate a maximum(=minimum) spanning tree
+t = g.spanning_tree(weights);
 
 # Traverse and print the graph as JSON
 f = open(outfile,'w')
@@ -95,9 +103,10 @@ def write_node(f,i,active,group,module,label,area) :
 	f.write( '"area":'+str(area)+' '		)
 	f.write( '}'                        	)
 
-def write_edge(f,i,source,target,value) :
+def write_edge(f,i,active,source,target,value) :
 	f.write( '		{'                  	)
 	f.write( '"id":'+ str(i) +', '			)
+	f.write( '"active":'+ str(active) +', '			)
 	f.write( '"source":'+ str(source) +', ')
 	f.write( '"target":'+ str(target) +', '	)
 	f.write( '"value":'+ str(value) +' '	)
@@ -124,24 +133,25 @@ f.write( '	"links":[\n' )
 j=0
 for i in range(0,len(g.es)) :
 	e = g.es[i]
-	value = e['value']
+	value = weights[i]
 	mods = len(g.vs) + int(g.vs[e.source]['group'])
 	modt = len(g.vs) + int(g.vs[e.target]['group'])
 	# ...for function to function
-	write_edge(f,j,e.source,e.target,value)
+	if len(t.es.select(id_eq=e['id']))>0 : write_edge(f,j,1,e.source,e.target,value)
+	else : write_edge(f,j,0,e.source,e.target,value)
 	j = j+1
 	if (mods != modt) :
 		f.write( ',\n' )
 		# ...for module to function
-		write_edge(f,j,mods,e.target,value)
+		write_edge(f,j,0,mods,e.target,value)
 		f.write( ',\n' )
 		j = j+1
 		# ...for function to module
-		write_edge(f,j,e.source,modt,value)
+		write_edge(f,j,0,e.source,modt,value)
 		f.write( ',\n' )
 		j = j+1
 		# ...for module to module
-		write_edge(f,j,mods,modt,value)
+		write_edge(f,j,0,mods,modt,value)
 		j = j+1
 	if (i < len(g.es)-1) : f.write( ',')
 	f.write('\n')

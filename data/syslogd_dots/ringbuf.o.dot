@@ -1,0 +1,40 @@
+digraph "Call Graph" {
+	label="Call Graph";
+
+	Node0x20dbb7cc0 [shape=record,label="{external node}"];
+	Node0x20dbb7cc0 -> Node0x2049ecfc0;
+	Node0x20dbb7cc0 -> Node0x2049ec940;
+	Node0x20dbb7cc0 -> Node0x2049ec080;
+	Node0x20dbb7cc0 -> Node0x2049ec400;
+	Node0x20dbb7cc0 -> Node0x2049eccc0;
+	Node0x20dbb7cc0 -> Node0x2049ecd00;
+	Node0x20dbb7cc0 -> Node0x2049ec600;
+	Node0x20dbb7cc0 -> Node0x2049ec4c0;
+	Node0x20dbb7cc0 -> Node0x2049ec700;
+	Node0x20dbb7cc0 -> Node0x2049ec740;
+	Node0x2049ec400 [shape=record,label="{ringbuf_free}"];
+	Node0x2049ec400 -> Node0x2049ec080;
+	Node0x2049ec400 -> Node0x2049ec080;
+	Node0x2049ec4c0 [shape=record,label="{strlen}"];
+	Node0x2049ec4c0 -> Node0x2049ec3c0;
+	Node0x2049ec700 [shape=record,label="{llvm.memcpy.p0i8.p0i8.i64}"];
+	Node0x2049ecfc0 [shape=record,label="{ringbuf_init}"];
+	Node0x2049ecfc0 -> Node0x2049ec940;
+	Node0x2049ecfc0 -> Node0x2049ec940;
+	Node0x2049ecfc0 -> Node0x2049ec080;
+	Node0x2049ec940 [shape=record,label="{malloc}"];
+	Node0x2049ec940 -> Node0x2049ec3c0;
+	Node0x2049ec080 [shape=record,label="{free}"];
+	Node0x2049ec080 -> Node0x2049ec3c0;
+	Node0x2049eccc0 [shape=record,label="{ringbuf_clear}"];
+	Node0x2049ecd00 [shape=record,label="{ringbuf_used}"];
+	Node0x2049ec600 [shape=record,label="{ringbuf_append_line}"];
+	Node0x2049ec600 -> Node0x2049ec4c0;
+	Node0x2049ec600 -> Node0x2049ec700;
+	Node0x2049ec600 -> Node0x2049ec700;
+	Node0x2049ec600 -> Node0x2049ec700;
+	Node0x2049ec740 [shape=record,label="{ringbuf_to_string}"];
+	Node0x2049ec740 -> Node0x2049ec700;
+	Node0x2049ec740 -> Node0x2049ec700;
+	Node0x2049ec740 -> Node0x2049ec700;
+}
