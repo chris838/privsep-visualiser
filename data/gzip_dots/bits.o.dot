@@ -1,0 +1,35 @@
+digraph "Call Graph" {
+	label="Call Graph";
+
+	Node0x1f6c670 [shape=record,label="{external node}"];
+	Node0x1f6c670 -> Node0x1f6c6d0;
+	Node0x1f6c670 -> Node0x1f6c730;
+	Node0x1f6c670 -> Node0x1f6c700;
+	Node0x1f6c670 -> Node0x1f6c700;
+	Node0x1f6c670 -> Node0x1f592f0;
+	Node0x1f6c670 -> Node0x1f58730;
+	Node0x1f6c670 -> Node0x1f59220;
+	Node0x1f6c670 -> Node0x1f59250;
+	Node0x1f6c670 -> Node0x1f6c760;
+	Node0x1f592f0 [shape=record,label="{send_bits}"];
+	Node0x1f592f0 -> Node0x1f58730;
+	Node0x1f592f0 -> Node0x1f58730;
+	Node0x1f6c6d0 [shape=record,label="{bi_init}"];
+	Node0x1f6c730 [shape=record,label="{llvm.dbg.declare}"];
+	Node0x1f6c700 [shape=record,label="{file_read}"];
+	Node0x1f6c700 -> Node0x1f6c6a0;
+	Node0x1f58730 [shape=record,label="{flush_outbuf}"];
+	Node0x1f58730 -> Node0x1f6c6a0;
+	Node0x1f59220 [shape=record,label="{bi_reverse}"];
+	Node0x1f59250 [shape=record,label="{bi_windup}"];
+	Node0x1f59250 -> Node0x1f58730;
+	Node0x1f59250 -> Node0x1f58730;
+	Node0x1f59250 -> Node0x1f58730;
+	Node0x1f6c760 [shape=record,label="{copy_block}"];
+	Node0x1f6c760 -> Node0x1f59250;
+	Node0x1f6c760 -> Node0x1f58730;
+	Node0x1f6c760 -> Node0x1f58730;
+	Node0x1f6c760 -> Node0x1f58730;
+	Node0x1f6c760 -> Node0x1f58730;
+	Node0x1f6c760 -> Node0x1f58730;
+}

@@ -1,0 +1,5 @@
+digraph "Call Graph" {
+	label="Call Graph";
+
+	Node0x79a6f0 [shape=record,label="{external node}"];
+}

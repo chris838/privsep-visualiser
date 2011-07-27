@@ -1,0 +1,45 @@
+digraph "Call Graph" {
+	label="Call Graph";
+
+	Node0x13e3bd0 [shape=record,label="{external node}"];
+	Node0x13e3bd0 -> Node0x13e3c30;
+	Node0x13e3bd0 -> Node0x13d9ce0;
+	Node0x13e3bd0 -> Node0x13e3c90;
+	Node0x13e3bd0 -> Node0x13e3cf0;
+	Node0x13e3bd0 -> Node0x13e3cc0;
+	Node0x13e3bd0 -> Node0x13da2e0;
+	Node0x13e3bd0 -> Node0x13da220;
+	Node0x13e3bd0 -> Node0x13da160;
+	Node0x13e3bd0 -> Node0x13d9fe0;
+	Node0x13e3bd0 -> Node0x13d9e60;
+	Node0x13e3c30 [shape=record,label="{unlzw}"];
+	Node0x13e3c30 -> Node0x13e3c90;
+	Node0x13e3c30 -> Node0x13e3cf0;
+	Node0x13e3c30 -> Node0x13e3cf0;
+	Node0x13e3c30 -> Node0x13e3cc0;
+	Node0x13e3c30 -> Node0x13da2e0;
+	Node0x13e3c30 -> Node0x13da220;
+	Node0x13e3c30 -> Node0x13da160;
+	Node0x13e3c30 -> Node0x13e3cc0;
+	Node0x13e3c30 -> Node0x13d9fe0;
+	Node0x13e3c30 -> Node0x13da160;
+	Node0x13e3c30 -> Node0x13d9e60;
+	Node0x13e3c30 -> Node0x13d9fe0;
+	Node0x13e3c30 -> Node0x13d9e60;
+	Node0x13e3c30 -> Node0x13d9fe0;
+	Node0x13d9ce0 [shape=record,label="{llvm.dbg.declare}"];
+	Node0x13e3c90 [shape=record,label="{fill_inbuf}"];
+	Node0x13e3c90 -> Node0x13e3c00;
+	Node0x13e3cf0 [shape=record,label="{fprintf}"];
+	Node0x13e3cf0 -> Node0x13e3c00;
+	Node0x13e3cc0 [shape=record,label="{llvm.memset.p0i8.i64}"];
+	Node0x13da2e0 [shape=record,label="{read}"];
+	Node0x13da2e0 -> Node0x13e3c00;
+	Node0x13da220 [shape=record,label="{read_error}"];
+	Node0x13da220 -> Node0x13e3c00;
+	Node0x13da160 [shape=record,label="{error}"];
+	Node0x13da160 -> Node0x13e3c00;
+	Node0x13d9fe0 [shape=record,label="{write_buf}"];
+	Node0x13d9fe0 -> Node0x13e3c00;
+	Node0x13d9e60 [shape=record,label="{llvm.memcpy.p0i8.p0i8.i64}"];
+}

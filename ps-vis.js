@@ -93,7 +93,7 @@ function update() {
 		.distance( function(d) {
 			return ( scale*(distance + d.source.r + d.target.r) );
 		})
-		.charge(charge*scale)
+		.charge( scale*charge )
 		.friction(friction)
 		.gravity(gravity)
 		.start();
@@ -130,12 +130,11 @@ function click(d) {
 	} else {
 		// Or if a module node
 		// Show all group functions
-		/*
 		for (var i=0; i < data.nodes.length; i++) {
 			if (data.nodes[i].group == d.group)
 				data.nodes[i].active = true;
 		}
-		*/
+		
 		// Hide module
 		d.active = false;
 	}

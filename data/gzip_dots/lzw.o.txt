@@ -1,0 +1,6 @@
+         T lzw
+         U llvm.dbg.declare
+         U fprintf
+         d msg_done
+         U stderr
+         U exit_code

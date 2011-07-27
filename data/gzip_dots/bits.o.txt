@@ -1,0 +1,14 @@
+         T bi_init
+         U llvm.dbg.declare
+         U file_read
+         T send_bits
+         U flush_outbuf
+         T bi_reverse
+         T bi_windup
+         T copy_block
+         d zfile
+         d bi_buf
+         d bi_valid
+         C read_buf
+         U outcnt
+         U outbuf
