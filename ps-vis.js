@@ -63,7 +63,7 @@ function update() {
 	links_active = data.links.filter(function(d) {
 		if (isNumber(d.source)) d.source = data.nodes[d.source];
 		if (isNumber(d.target)) d.target = data.nodes[d.target];
-		var active = 	d.in_st &&
+		var active = 	//d.in_st &&
 						//(d.source.leaf == d.target.leaf) &&
 						(d.source.cost >= min_cost) &&
 						(d.target.cost >= min_cost) &&
@@ -98,11 +98,17 @@ function update() {
 	// Redraw edges
 	layer_links.selectAll("line")
 		.transition()
-			.duration(0)
+			.duration(2500)
 			.attr("style",function(d)
 			{
-							width = (1+2*d.in_st);
+				if ((d.source.cost >= min_cost) &&
+						(d.target.cost >= min_cost)) {
+							width = (2+3*d.in_st);
 							col ="rgb(190,190,190)";
+				} else {
+							width = 0.5;
+							col ="rgb(190,190,190)";
+				}
 				return "fill:none;stroke:"+col+";stroke-width:"+width;
 			});
 			
@@ -140,7 +146,7 @@ function update() {
 	// Redraw circle nodes
 	layer_nodes.selectAll("circle")
 		.transition()
-			.duration(0)
+			.duration(2500)
 			.attr("r", function(d) {
 				d.r = 4*Math.sqrt(d.area); return d.r;
 				//d.r = 1 || Math.log( d.cost );
@@ -154,7 +160,7 @@ function update() {
 		
 	// Exit any old nodes.
 	node.exit().transition()
-		.duration(0)
+		.duration(500)
 		.style("opacity", 0)
 		.remove();
 	
@@ -323,7 +329,7 @@ function mouseup() {
 	if (!rect) return;
 	rect.remove();
 	rect = null;
-	/*
+	
 	// Grab nodes with the rectangle
 	layer_nodes.selectAll("g.node")
 		.attr("selected", function(d) {
@@ -336,7 +342,6 @@ function mouseup() {
 			if (d.selected) return "black";
 			return "white";
 		});
-	*/
 }
 // Attach to window
 d3.select(window)
