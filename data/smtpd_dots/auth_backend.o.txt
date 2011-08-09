@@ -1,0 +1,11 @@
+         T auth_bsd
+         T auth_getpwnam
+         T auth_backend_lookup
+         U fatalx
+         U auth_userokay
+         U getpwnam
+         U strcmp
+         U crypt
+         U llvm.dbg.value
+         D auth_backends
+         C smtpd_process

@@ -1,0 +1,41 @@
+digraph "Call Graph" {
+	label="Call Graph";
+
+	Node0x1e74340 [shape=record,label="{external node}"];
+	Node0x1e74340 -> Node0x1e743a0;
+	Node0x1e74340 -> Node0x1e743a0;
+	Node0x1e74340 -> Node0x1e74400;
+	Node0x1e74340 -> Node0x1e74400;
+	Node0x1e74340 -> Node0x1e75d40;
+	Node0x1e74340 -> Node0x1e74db0;
+	Node0x1e74340 -> Node0x1e744f0;
+	Node0x1e74340 -> Node0x1e74430;
+	Node0x1e74340 -> Node0x1e743d0;
+	Node0x1e74340 -> Node0x1e74650;
+	Node0x1e74340 -> Node0x1e74740;
+	Node0x1e743a0 [shape=record,label="{user_getpwnam}"];
+	Node0x1e743a0 -> Node0x1e743d0;
+	Node0x1e743a0 -> Node0x1e74430;
+	Node0x1e743a0 -> Node0x1e74430;
+	Node0x1e743a0 -> Node0x1e74430;
+	Node0x1e74400 [shape=record,label="{user_getpwuid}"];
+	Node0x1e74400 -> Node0x1e74650;
+	Node0x1e74400 -> Node0x1e74430;
+	Node0x1e74400 -> Node0x1e74430;
+	Node0x1e74400 -> Node0x1e74430;
+	Node0x1e743d0 [shape=record,label="{getpwnam}"];
+	Node0x1e743d0 -> Node0x1e74370;
+	Node0x1e75d40 [shape=record,label="{user_backend_lookup}"];
+	Node0x1e75d40 -> Node0x1e74db0;
+	Node0x1e74db0 [shape=record,label="{fatalx}"];
+	Node0x1e74db0 -> Node0x1e74370;
+	Node0x1e744f0 [shape=record,label="{user_getpw_ret}"];
+	Node0x1e744f0 -> Node0x1e74430;
+	Node0x1e744f0 -> Node0x1e74430;
+	Node0x1e744f0 -> Node0x1e74430;
+	Node0x1e74430 [shape=record,label="{strlcpy}"];
+	Node0x1e74430 -> Node0x1e74370;
+	Node0x1e74650 [shape=record,label="{getpwuid}"];
+	Node0x1e74650 -> Node0x1e74370;
+	Node0x1e74740 [shape=record,label="{llvm.dbg.value}"];
+}

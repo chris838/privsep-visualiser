@@ -487,12 +487,12 @@ var d3_layout_forceDragForce,
     d3_layout_forceDragElement;
 
 function d3_layout_forceDragOver(d) {
-  d.fixed = true;
+  //d.fixed = true;
 }
 
 function d3_layout_forceDragOut(d) {
   if (d !== d3_layout_forceDragNode) {
-    d.fixed = false;
+    //d.fixed = false;
   }
 }
 
@@ -536,7 +536,7 @@ function d3_layout_forceDragUp() {
     d3_layout_forceDragMove();
   }
 
-  d3_layout_forceDragNode.fixed = false;
+  //d3_layout_forceDragNode.fixed = false;
   d3_layout_forceDragForce =
   d3_layout_forceDragOffset =
   d3_layout_forceDragNode =

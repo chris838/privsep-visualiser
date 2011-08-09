@@ -1,0 +1,35 @@
+digraph "Call Graph" {
+	label="Call Graph";
+
+	Node0x1364680 [shape=record,label="{external node}"];
+	Node0x1364680 -> Node0x137ce40;
+	Node0x1364680 -> Node0x137ce40;
+	Node0x1364680 -> Node0x1361bb0;
+	Node0x1364680 -> Node0x1361bb0;
+	Node0x1364680 -> Node0x13632a0;
+	Node0x1364680 -> Node0x1363180;
+	Node0x1364680 -> Node0x1361b50;
+	Node0x1364680 -> Node0x1361be0;
+	Node0x1364680 -> Node0x13631d0;
+	Node0x1364680 -> Node0x1363230;
+	Node0x1364680 -> Node0x13654c0;
+	Node0x137ce40 [shape=record,label="{auth_bsd}"];
+	Node0x137ce40 -> Node0x1361b50;
+	Node0x1361be0 [shape=record,label="{getpwnam}"];
+	Node0x1361be0 -> Node0x1377010;
+	Node0x1361bb0 [shape=record,label="{auth_getpwnam}"];
+	Node0x1361bb0 -> Node0x1361be0;
+	Node0x1361bb0 -> Node0x1363230;
+	Node0x1361bb0 -> Node0x13631d0;
+	Node0x13632a0 [shape=record,label="{auth_backend_lookup}"];
+	Node0x13632a0 -> Node0x1363180;
+	Node0x1363180 [shape=record,label="{fatalx}"];
+	Node0x1363180 -> Node0x1377010;
+	Node0x1361b50 [shape=record,label="{auth_userokay}"];
+	Node0x1361b50 -> Node0x1377010;
+	Node0x13631d0 [shape=record,label="{strcmp}"];
+	Node0x13631d0 -> Node0x1377010;
+	Node0x1363230 [shape=record,label="{crypt}"];
+	Node0x1363230 -> Node0x1377010;
+	Node0x13654c0 [shape=record,label="{llvm.dbg.value}"];
+}

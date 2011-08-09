@@ -1,0 +1,42 @@
+digraph "Call Graph" {
+	label="Call Graph";
+
+	Node0x7ddc60 [shape=record,label="{external node}"];
+	Node0x7ddc60 -> Node0x7ddcc0;
+	Node0x7ddc60 -> Node0x7ddd20;
+	Node0x7ddc60 -> Node0x7ddd50;
+	Node0x7ddc60 -> Node0x7b6f30;
+	Node0x7ddc60 -> Node0x7ba100;
+	Node0x7ddc60 -> Node0x7c2d40;
+	Node0x7ddc60 -> Node0x7bb750;
+	Node0x7ddc60 -> Node0x7bb5c0;
+	Node0x7ddc60 -> Node0x7ddd80;
+	Node0x7ddc60 -> Node0x7b7ec0;
+	Node0x7ddcc0 [shape=record,label="{ruleset_match}"];
+	Node0x7ddcc0 -> Node0x7ddd20;
+	Node0x7ddcc0 -> Node0x7ddd80;
+	Node0x7ddcc0 -> Node0x7ddd80;
+	Node0x7ddcc0 -> Node0x7ddc90;
+	Node0x7ddcc0 -> Node0x7ddd50;
+	Node0x7ddcc0 -> Node0x7b6f30;
+	Node0x7ddcc0 -> Node0x7ba100;
+	Node0x7ddcc0 -> Node0x7c2d40;
+	Node0x7ddcc0 -> Node0x7bb750;
+	Node0x7ddcc0 -> Node0x7bb5c0;
+	Node0x7c2d40 [shape=record,label="{map_lookup}"];
+	Node0x7c2d40 -> Node0x7ddc90;
+	Node0x7ddd20 [shape=record,label="{strcmp}"];
+	Node0x7ddd20 -> Node0x7ddc90;
+	Node0x7ddd50 [shape=record,label="{map_find}"];
+	Node0x7ddd50 -> Node0x7ddc90;
+	Node0x7b6f30 [shape=record,label="{fatal}"];
+	Node0x7b6f30 -> Node0x7ddc90;
+	Node0x7ba100 [shape=record,label="{hostname_match}"];
+	Node0x7ba100 -> Node0x7ddc90;
+	Node0x7bb750 [shape=record,label="{log_info}"];
+	Node0x7bb750 -> Node0x7ddc90;
+	Node0x7bb5c0 [shape=record,label="{aliases_vdomain_exists}"];
+	Node0x7bb5c0 -> Node0x7ddc90;
+	Node0x7ddd80 [shape=record,label="{llvm.memset.p0i8.i64}"];
+	Node0x7b7ec0 [shape=record,label="{llvm.dbg.value}"];
+}

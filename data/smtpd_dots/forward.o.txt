@@ -1,0 +1,17 @@
+         T forwards_get
+         U llvm.dbg.declare
+         U fdopen
+         U fgetln
+         U malloc
+         U fatal
+         U llvm.memcpy.p0i8.p0i8.i64
+         U llvm.memset.p0i8.i64
+         U alias_parse
+         U log_debug
+         U strlcpy
+         U expandtree_increment_node
+         U free
+         U fclose
+         U llvm.dbg.value
+         C smtpd_process
+         U _ctype_

@@ -1,0 +1,12 @@
+         T ruleset_match
+         U strcmp
+         U map_find
+         U fatal
+         U hostname_match
+         U map_lookup
+         U log_info
+         U aliases_vdomain_exists
+         U llvm.memset.p0i8.i64
+         U llvm.dbg.value
+         U env
+         C smtpd_process

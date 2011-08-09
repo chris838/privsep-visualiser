@@ -1,0 +1,9 @@
+         T map_findbyname
+         U strcmp
+         T map_find
+         T map_lookup
+         U map_backend_lookup
+         U log_warn
+         U llvm.dbg.value
+         U env
+         C smtpd_process

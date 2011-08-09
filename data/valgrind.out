@@ -1,0 +1,12 @@
+==9623== Callgrind, a call-graph generating cache profiler
+==9623== Copyright (C) 2002-2010, and GNU GPL'd, by Josef Weidendorfer et al.
+==9623== Using Valgrind-3.7.0.SVN and LibVEX; rerun with -h for copyright info
+==9623== Command: gzip-clanged -c 200MB.zip
+==9623== Parent PID: 1
+==9623== 
+==9623== For interactive control, run 'callgrind_control -h'.
+==9623== 
+==9623== Events    : Ir
+==9623== Collected : 51917493336
+==9623== 
+==9623== I   refs:      51,917,493,336

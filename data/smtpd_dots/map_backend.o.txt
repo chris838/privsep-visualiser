@@ -1,0 +1,6 @@
+         T map_backend_lookup
+         U fatalx
+         U llvm.dbg.value
+         U map_backend_db
+         U map_backend_stdio
+         C smtpd_process

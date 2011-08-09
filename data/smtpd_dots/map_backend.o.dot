@@ -1,0 +1,13 @@
+digraph "Call Graph" {
+	label="Call Graph";
+
+	Node0x252cf20 [shape=record,label="{external node}"];
+	Node0x252cf20 -> Node0x252bbf0;
+	Node0x252cf20 -> Node0x252bc50;
+	Node0x252cf20 -> Node0x2529ad0;
+	Node0x252bbf0 [shape=record,label="{map_backend_lookup}"];
+	Node0x252bbf0 -> Node0x252bc50;
+	Node0x252bc50 [shape=record,label="{fatalx}"];
+	Node0x252bc50 -> Node0x252cf50;
+	Node0x2529ad0 [shape=record,label="{llvm.dbg.value}"];
+}

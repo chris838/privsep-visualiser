@@ -1,0 +1,11 @@
+         T user_getpwnam
+         T user_getpwuid
+         T user_backend_lookup
+         U fatalx
+         T user_getpw_ret
+         U strlcpy
+         U getpwnam
+         U getpwuid
+         U llvm.dbg.value
+         D user_backends
+         C smtpd_process

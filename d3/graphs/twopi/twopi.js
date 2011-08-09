@@ -1,7 +1,7 @@
 // Global vars
 var w = 900,
     h = 900,
-    scale = 1.5,
+    scale = 1,
 	fill = d3.scale.category20();
 				
 	
@@ -32,7 +32,7 @@ d3.json("../../data/callgraph.twopi.json", function(json) {
 			.attr("y2", function(d) {return scale*d.target.y;});
 			
 	// Vertices
-	var node = svg.selectAll("g.node")w
+	var node = svg.selectAll("g.node")
 		.data(json.nodes)
 	  .enter().append("svg:g")
 		.attr("class", "node")
