@@ -6,77 +6,42 @@ import time
 import re
 import json
 
-dump_path = "dumps/"
 data_path = "updates.json"
+outfile="callgrind.out"
+logfile="valgrind.out"
+wastefile="waste.gz"
 
 # Hold the run of costs so far
 costs = {}
 
-
-# Function to return an array of dump files, in correct processing order
-def get_dumps() :
-	# Get any dump files in the dump folder
-	dumps = glob.glob( dump_path+"callgrind.out.*")
-	# Sort into correct order
-	dumps.sort(reverse=False)
-	# Make sure we get the last dump file, which is annoyingly named without
-	# the numeric suffix.
-	for last_out in glob.glob( dump_path+"callgrind.out") :
-		dumps.append( last_out )
-	return dumps
-
-
 # Function to process dump file
 def process(dump) :
 	print "Processing new callgrind dump file"
-	while 1:
-		line = dump.readline()
-		if not line:
-			# Save out to file
-			data = {"nodes":[]}
-			for k in costs :
-				data["nodes"].append( {"label":k, "cost":costs[k] } )
-			# Use the cost to update JSON file
-			data_file = open(data_path, 'w')
-			data_file.write(json.dumps(data))
-			data_file.close()
-			break
-		if re.match( '^cf[nl]=' , line) :
-			funs = line.split(' ')
-			if len(funs) > 1 :
-				# Get the cost for this function
-				fun = funs[1].strip()
-				cost = 0
-				dump.readline() # skip next line
-				next_line = dump.readline()
-				print next_line
-				while re.match( '(^[\+]?\d+)|(^\*)', next_line ) :
-					# sum cost over successive lines
-					cost += int( next_line.split(' ')[1].strip() )
-					next_line = dump.readline()
-				# Update our running costs
-				costs[fun] =cost + costs.get( fun, 0)
-				
+	os.system( "callgrind_annotate {}".format(outfile) )
 
 
-dumps = []
-# Poll for new dump files
-while True :
-	
-	# Get initial list of dump files
-	dumps = get_dumps()
-	
-	# While any files left to process
-	while len(dumps) > 0 :
-		
-		# Grab oldest unprocessed dump file
-		file = dumps[0]
-		
-		# Process output
-		process( open(file,'r') )
-		
-		# Remove dump file
-		os.system( "rm {}".format(file) )
-		
-		# Update dump files list
-		dumps = get_dumps()
+# Remove output from previous run
+os.system( "rm {} {} {}".format(outfile, logfile, wastefile) )
+
+# Create output pipe
+os.system( "mkfifo {}".format(outfile) )
+
+# Create valgrind/callgrind call
+cg_call  = "valgrind --tool=callgrind "
+cg_call += "--log-file={} ".format(logfile)
+cg_call += "--callgrind-out-file={} ".format(outfile)
+cg_call += "--compress-pos=no "
+cg_call += "--dump-every-bb=50000000 "
+cg_call += "--combine-dumps=yes "
+cg_call += "gzip-clanged -c 5MB.zip > {} ".format(wastefile)
+
+# Fork child process to run callgrind
+pid = os.fork()
+if pid :
+	# Parent process - reads pipe into callgrind_annotate until child is finished
+	while True :
+		os.system( 'echo "cmd:  gzip-clanged -c 5MB.zip"|cat - {} > /tmp/out; callgrind_annotate /tmp/out'.format(outfile) )
+else :
+	# Child process - calls valgrind to write data to the pipe
+	os.system( cg_call )
+	sys.exit(0)
