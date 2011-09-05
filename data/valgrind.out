@@ -1,12 +1,395 @@
-==16367== Callgrind, a call-graph generating cache profiler
-==16367== Copyright (C) 2002-2010, and GNU GPL'd, by Josef Weidendorfer et al.
-==16367== Using Valgrind-3.7.0.SVN and LibVEX; rerun with -h for copyright info
-==16367== Command: gzip-clanged -c 5MB.zip
-==16367== Parent PID: 16364
-==16367== 
-==16367== For interactive control, run 'callgrind_control -h'.
-==16367== 
-==16367== Events    : Ir
-==16367== Collected : 1293528652
-==16367== 
-==16367== I   refs:      1,293,528,652
+==18288== Privgrind, the Priv-Seperation Valgrind tool
+==18288== Copyright (C) 2011, Ross McIlroy.
+==18288== Using Valgrind-3.7.0.SVN and LibVEX; rerun with -h for copyright info
+==18288== Command: gzip-clanged aaa.bin
+==18288== Parent PID: 16678
+==18288== 
+==18288== 
+FUNC: 49 zip ()
+  ITERATION: 0 
+  	CALL: 16, 1 
+  	CALL: 50, 1 
+  	CALL: 51, 1 
+  	CALL: 52, 1 
+  	CALL: 56, 1 
+  	CALL: 60, 1 
+  	CALL: 75, 1 
+FUNC: 69 scan_tree ()
+  ITERATION: 0 
+FUNC: 86 free ()
+  ITERATION: 0 
+FUNC: 37 __ctype_b_loc ()
+  ITERATION: 0 
+FUNC: 35 get_suffix ()
+  ITERATION: 0 
+  	CALL: 0, 20 
+  	CALL: 36, 1 
+FUNC: 20 add_envopt ()
+  ITERATION: 0 
+  	CALL: 0, 1 
+FUNC: 47 name_too_long ()
+  ITERATION: 0 
+  	CALL: 0, 2 
+  	CALL: 43, 1 
+FUNC: 51 bi_init ()
+  ITERATION: 0 
+FUNC: 61 ct_tally ()
+  ITERATION: 0 
+FUNC: 78 close ()
+  ITERATION: 0 
+FUNC: 36 strlwr ()
+  ITERATION: 0 
+  	CALL: 0, 7 
+FUNC: 42 check_ofname ()
+  ITERATION: 0 
+  	CALL: 0, 2 
+  	CALL: 43, 1 
+FUNC: 29 strcpy ()
+  ITERATION: 0 
+FUNC: 3 __libc_memalign ()
+  ITERATION: 0 
+  	CALL: 0, 3 
+FUNC: 15 main ()
+  ITERATION: 0 
+  	CALL: 0, 20 
+  	CALL: 16, 1 
+  	CALL: 20, 1 
+  	CALL: 27, 1 
+  	CALL: 85, 1 
+FUNC: 79 copy_stat ()
+  ITERATION: 0 
+  	CALL: 0, 4 
+  	CALL: 80, 1 
+FUNC: 73 compress_block ()
+  ITERATION: 0 
+  	CALL: 70, 697 
+FUNC: 53 gen_codes ()
+  ITERATION: 0 
+  	CALL: 54, 385 
+FUNC: 19 strcmp ()
+  ITERATION: 0 
+FUNC: 83 chown ()
+  ITERATION: 0 
+FUNC: 46 __fxstat ()
+  ITERATION: 0 
+FUNC: 0 <Unknown> ()
+  ITERATION: 0 
+  	CALL: 0, 281 
+  	CALL: 1, 9 
+  	CALL: 2, 27 
+  	CALL: 3, 23 
+  	CALL: 4, 2 
+  	CALL: 5, 1 
+  	CALL: 6, 1 
+  	CALL: 7, 1 
+  	CALL: 8, 1 
+  	CALL: 9, 13 
+  	CALL: 10, 1 
+  	CALL: 17, 1 
+  	CALL: 18, 1 
+  	CALL: 19, 1 
+  	CALL: 21, 2 
+  	CALL: 22, 6 
+  	CALL: 24, 1 
+  	CALL: 25, 1 
+  	CALL: 26, 1 
+  	CALL: 29, 1 
+  	CALL: 31, 3 
+  	CALL: 33, 1 
+  	CALL: 37, 7 
+  	CALL: 38, 1 
+  	CALL: 39, 2 
+  	CALL: 44, 2 
+  	CALL: 46, 1 
+  	CALL: 48, 1 
+  	CALL: 57, 1 
+  	CALL: 59, 2 
+  	CALL: 77, 1 
+  	CALL: 78, 2 
+  	CALL: 81, 1 
+  	CALL: 82, 2 
+  	CALL: 83, 1 
+  	CALL: 84, 1 
+  	CALL: 86, 5 
+  	CALL: 87, 1 
+  	CALL: 88, 2 
+FUNC: 70 send_bits ()
+  ITERATION: 0 
+FUNC: 16 basename ()
+  ITERATION: 0 
+  	CALL: 0, 2 
+FUNC: 43 stat ()
+  ITERATION: 0 
+  	CALL: 0, 2 
+FUNC: 66 pqdownheap ()
+  ITERATION: 0 
+FUNC: 80 reset_times ()
+  ITERATION: 0 
+  	CALL: 0, 1 
+FUNC: 52 ct_init ()
+  ITERATION: 0 
+  	CALL: 53, 1 
+  	CALL: 54, 30 
+  	CALL: 55, 1 
+FUNC: 28 get_istat ()
+  ITERATION: 0 
+  	CALL: 0, 1 
+  	CALL: 30, 1 
+FUNC: 23 sigaction ()
+  ITERATION: 0 
+  	CALL: 0, 6 
+FUNC: 32 lstat ()
+  ITERATION: 0 
+  	CALL: 0, 1 
+FUNC: 40 clear_bufs ()
+  ITERATION: 0 
+FUNC: 33 __lxstat ()
+  ITERATION: 0 
+FUNC: 57 memset ()
+  ITERATION: 0 
+FUNC: 1 calloc ()
+  ITERATION: 0 
+  	CALL: 0, 9 
+FUNC: 82 chmod ()
+  ITERATION: 0 
+FUNC: 27 treat_file ()
+  ITERATION: 0 
+  	CALL: 0, 4 
+  	CALL: 28, 1 
+  	CALL: 34, 1 
+  	CALL: 40, 1 
+  	CALL: 41, 1 
+  	CALL: 49, 1 
+  	CALL: 79, 1 
+FUNC: 89 _Exit ()
+  ITERATION: 0 
+FUNC: 59 read ()
+  ITERATION: 0 
+FUNC: 62 longest_match ()
+  ITERATION: 0 
+FUNC: 48 memcpy ()
+  ITERATION: 0 
+FUNC: 74 bi_windup ()
+  ITERATION: 0 
+FUNC: 72 send_tree ()
+  ITERATION: 0 
+  	CALL: 70, 118 
+FUNC: 4 _dl_debug_state ()
+  ITERATION: 0 
+FUNC: 63 fill_window ()
+  ITERATION: 0 
+  	CALL: 58, 1 
+FUNC: 54 bi_reverse ()
+  ITERATION: 0 
+FUNC: 31 __errno_locationllllllll0 ()
+  ITERATION: 0 
+FUNC: 30 do_stat ()
+  ITERATION: 0 
+  	CALL: 0, 1 
+  	CALL: 32, 1 
+FUNC: 77 write ()
+  ITERATION: 0 
+FUNC: 6 strncasecmp ()
+  ITERATION: 0 
+FUNC: 44 __xstat ()
+  ITERATION: 0 
+FUNC: 56 lm_init ()
+  ITERATION: 0 
+  	CALL: 0, 1 
+  	CALL: 58, 1 
+FUNC: 21 getenv ()
+  ITERATION: 0 
+  	CALL: 0, 2 
+FUNC: 39 open ()
+  ITERATION: 0 
+FUNC: 38 strcat ()
+  ITERATION: 0 
+FUNC: 60 deflate ()
+  ITERATION: 0 
+  	CALL: 61, 478 
+  	CALL: 62, 186 
+  	CALL: 63, 1 
+  	CALL: 64, 1 
+FUNC: 71 send_all_trees ()
+  ITERATION: 0 
+  	CALL: 70, 17 
+  	CALL: 72, 2 
+FUNC: 58 file_read ()
+  ITERATION: 0 
+  	CALL: 0, 2 
+  	CALL: 50, 1 
+FUNC: 34 make_ofname ()
+  ITERATION: 0 
+  	CALL: 0, 2 
+  	CALL: 35, 1 
+FUNC: 64 flush_block ()
+  ITERATION: 0 
+  	CALL: 55, 1 
+  	CALL: 65, 2 
+  	CALL: 68, 1 
+  	CALL: 70, 1 
+  	CALL: 71, 1 
+  	CALL: 73, 1 
+  	CALL: 74, 1 
+FUNC: 18 strlen ()
+  ITERATION: 0 
+FUNC: 17 rindex ()
+  ITERATION: 0 
+FUNC: 14 __sigsetjmp ()
+  ITERATION: 0 
+  	CALL: 0, 1 
+FUNC: 67 gen_bitlen ()
+  ITERATION: 0 
+FUNC: 41 create_outfile ()
+  ITERATION: 0 
+  	CALL: 0, 1 
+  	CALL: 42, 1 
+  	CALL: 45, 1 
+  	CALL: 47, 1 
+FUNC: 55 init_block ()
+  ITERATION: 0 
+FUNC: 25 strncpy ()
+  ITERATION: 0 
+FUNC: 87 exit ()
+  ITERATION: 0 
+  	CALL: 0, 2 
+  	CALL: 89, 1 
+FUNC: 13 _setjmp ()
+  ITERATION: 0 
+  	CALL: 14, 1 
+FUNC: 65 build_tree ()
+  ITERATION: 0 
+  	CALL: 53, 3 
+  	CALL: 66, 236 
+  	CALL: 67, 3 
+FUNC: 8 init (/local/scratch/ch458/Privgrind/coregrind/m_replacemallocvg_replace_malloc.c)
+  ITERATION: 0 
+FUNC: 88 __cxa_finalize ()
+  ITERATION: 0 
+  	CALL: 0, 2 
+FUNC: 81 utime ()
+  ITERATION: 0 
+FUNC: 5 strcasecmp ()
+  ITERATION: 0 
+  	CALL: 0, 1 
+FUNC: 50 updcrc ()
+  ITERATION: 0 
+FUNC: 24 strncmp ()
+  ITERATION: 0 
+FUNC: 12 __libc_csu_init ()
+  ITERATION: 0 
+  	CALL: 0, 1 
+FUNC: 7 _dl_allocate_tls_init ()
+  ITERATION: 0 
+  	CALL: 0, 2 
+FUNC: 84 unlink ()
+  ITERATION: 0 
+FUNC: 75 flush_outbuf ()
+  ITERATION: 0 
+  	CALL: 76, 1 
+FUNC: 45 fstat ()
+  ITERATION: 0 
+  	CALL: 0, 1 
+FUNC: 9 bsearch ()
+  ITERATION: 0 
+  	CALL: 0, 85 
+FUNC: 2 malloc ()
+  ITERATION: 0 
+  	CALL: 0, 22 
+FUNC: 11 __cxa_atexit ()
+  ITERATION: 0 
+  	CALL: 0, 1 
+FUNC: 68 build_bl_tree ()
+  ITERATION: 0 
+  	CALL: 65, 1 
+  	CALL: 69, 2 
+FUNC: 22 signal ()
+  ITERATION: 0 
+  	CALL: 23, 6 
+FUNC: 26 getopt_long ()
+  ITERATION: 0 
+  	CALL: 0, 1 
+FUNC: 10 (below main) ()
+  ITERATION: 0 
+  	CALL: 11, 1 
+  	CALL: 12, 1 
+  	CALL: 13, 1 
+  	CALL: 15, 1 
+FUNC: 85 do_exit ()
+  ITERATION: 0 
+  	CALL: 0, 6 
+FUNC: 76 write_buf ()
+  ITERATION: 0 
+  	CALL: 0, 1 
+ADDR: 0x51c3040
+  ACCESS: 61, 0, 478
+  ACCESS: 73, 478, 0
+ADDR: 0x51cb0c0
+  ACCESS: 49, 0, 26
+  ACCESS: 70, 0, 494
+  ACCESS: 74, 0, 2
+ADDR: 0x51cf900
+  ACCESS: 61, 0, 204
+  ACCESS: 73, 204, 0
+ADDR: 0x51df940
+  ACCESS: 50, 1052, 0
+  ACCESS: 56, 2, 0
+  ACCESS: 60, 1428, 0
+  ACCESS: 62, 2775, 0
+ADDR: 0x51ef980
+  ACCESS: 0, 0, 2432
+  ACCESS: 60, 4, 4
+ADDR: 0x51ef980
+  ACCESS: 0, 0, 4096
+  ACCESS: 60, 4, 4
+ADDR: 0x51ef980
+  ACCESS: 0, 0, 4096
+  ACCESS: 60, 66, 66
+ADDR: 0x51ef980
+  ACCESS: 0, 0, 4096
+  ACCESS: 60, 46, 46
+ADDR: 0x51ef980
+  ACCESS: 0, 0, 4096
+  ACCESS: 60, 80, 80
+ADDR: 0x51ef980
+  ACCESS: 0, 0, 4096
+  ACCESS: 60, 124, 124
+ADDR: 0x51ef980
+  ACCESS: 0, 0, 4096
+  ACCESS: 60, 80, 80
+ADDR: 0x51ef980
+  ACCESS: 0, 0, 4096
+  ACCESS: 60, 156, 156
+ADDR: 0x51ef980
+  ACCESS: 0, 0, 4096
+  ACCESS: 60, 138, 138
+ADDR: 0x51ef980
+  ACCESS: 0, 0, 4096
+  ACCESS: 60, 166, 166
+ADDR: 0x51ef980
+  ACCESS: 0, 0, 4096
+  ACCESS: 60, 204, 204
+ADDR: 0x51ef980
+  ACCESS: 0, 0, 4096
+  ACCESS: 60, 248, 248
+ADDR: 0x51ef980
+  ACCESS: 0, 0, 4096
+  ACCESS: 60, 42, 42
+ADDR: 0x51ef980
+  ACCESS: 0, 0, 4096
+  ACCESS: 60, 192, 192
+ADDR: 0x51ef980
+  ACCESS: 0, 0, 4096
+  ACCESS: 60, 230, 230
+ADDR: 0x51ef980
+  ACCESS: 0, 0, 4096
+  ACCESS: 60, 238, 238
+ADDR: 0x51ef980
+  ACCESS: 0, 0, 1664
+  ACCESS: 60, 86, 86
+ADDR: 0x51ef980
+  ACCESS: 60, 0, 440
+  ACCESS: 62, 24, 0
+ADDR: 0x51ef980
+  ACCESS: 60, 0, 1664
+  ACCESS: 62, 876, 0
